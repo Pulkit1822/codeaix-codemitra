@@ -464,20 +464,9 @@ body {
   margin-right: 10px;
   font-size: 1.1rem;
   text-shadow: 0 0 8px rgba(213, 122, 255, 0.6);
-  animation: float 3s ease-in-out infinite;
+
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 
 /* Resize handle styling */
 #resize-handle {
