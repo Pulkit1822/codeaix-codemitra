@@ -6,20 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discussion Forum</title>
     <link rel="stylesheet" href="discuss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Forum Header -->
+    <header id="forum-header">
+        <div class="forum-title">
+            <i class="fas fa-robot bot-logo"></i>
+            <span>Code<span class="highlight-text">AI</span>x</span>
+            <span class="forum-label">Discussion Forum</span>
+        </div>
+        <div class="auth-controls">
+            <!-- Login status will be shown here -->
+            <div id="login-status"></div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+        </div>
+    </header>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter admin email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Post Submission Form -->
     <form id="post-form">
         <input type="text" id="post-title" placeholder="Post Title" required>
         <textarea id="post-content" placeholder="Write your post here..." required></textarea>
-        <button type="submit">Post</button>
+        <div class="admin-toggle" style="display: none;">
+            <input type="checkbox" id="post-as-admin">
+            <label for="post-as-admin">Post as Admin</label>
+        </div>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Post</button>
     </form>
 
     <!-- Posts Container -->
     <div id="posts-container"></div>
 
+    <script src="auth.js"></script>
     <script src="discuss.js"></script>
 </body>
 
