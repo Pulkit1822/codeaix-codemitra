@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
       // Add event listener to login button
       document.getElementById("login-btn").addEventListener("click", function() {
-        authModal.style.display = "block";
+        authModal.style.display = "flex"; // Changed from "block" to "flex"
       });
     }
 
@@ -273,5 +273,22 @@ document.addEventListener("DOMContentLoaded", function () {
   createPostBtn.addEventListener("click", function () {
     postFormContainer.style.display =
       postFormContainer.style.display === "none" ? "block" : "none";
+  });
+
+  // When showing the modal
+  document.getElementById("login-btn").addEventListener("click", function() {
+    authModal.classList.add("show");
+  });
+
+  // When closing the modal
+  closeModal.addEventListener("click", function () {
+    authModal.classList.remove("show");
+  });
+
+  // Close modal when clicking outside
+  window.addEventListener("click", function (event) {
+    if (event.target === authModal) {
+      authModal.classList.remove("show");
+    }
   });
 });
